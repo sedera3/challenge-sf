@@ -1,0 +1,7 @@
+opticity_gestion:
+    resource: "@OpticityGestionBundle/Controller/"
+    type:     annotation
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

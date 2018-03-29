@@ -1,0 +1,3 @@
+produit:
+    type:     rest
+    resource: Opticity\GestionBundle\Controller\DefaultController.php

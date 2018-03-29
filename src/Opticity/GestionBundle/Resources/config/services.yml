@@ -1,0 +1,4 @@
+services:
+#    opticity_gestion.example:
+#        class: Opticity\GestionBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
