@@ -17,6 +17,15 @@ class CommandService extends BaseService
         return $repo->findCommand($code);
     }
 
+    /**
+     * todo changer command:
+     * mettre dans json la liste des command,
+     * ex: "command": ["client":tutu,
+     * command: [{code_produit:RB, prix_ttc: 100},
+     * {code_produit:RB, prix_ttc: 100},
+     * {code_produit:RB, prix_ttc: 100}],
+     * description: "tututue"]
+     */
     public function putCommand($params) {
         $repo = $this->em->getRepository('Opticity\GestionBundle\Entity\Command');
 
