@@ -45,11 +45,6 @@ class Command
     private $prixUnitaire;
 
     /**
-     * @ORM\Column(name="prix_total", type="float", nullable=true)
-     */
-    private $prixTotal;
-
-    /**
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;

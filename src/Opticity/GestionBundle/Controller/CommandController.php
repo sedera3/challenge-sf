@@ -12,6 +12,7 @@ namespace Opticity\GestionBundle\Controller;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Put;
 use FOS\RestBundle\Controller\Annotations\Delete;
+use Opticity\GestionBundle\Entity\Command;
 use Opticity\GestionBundle\service\CommandService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -28,6 +29,17 @@ class CommandController extends Controller
      */
     public function getCommandAction($code = null, CommandService $commandService) {
         $return = $commandService->getCommand($code);
+        return new JsonResponse($return);
+    }
+
+    /**
+     * @param $client
+     * @Get("/command/prix_total/{client}")
+     * @param CommandService $commandService
+     * @return JsonResponse
+     */
+    public function getPrixTotalAction($client, CommandService $commandService) {
+        $return = $commandService->getPrixTotal($client);
         return new JsonResponse($return);
     }
 
