@@ -37,6 +37,7 @@ class CommandController extends Controller
      * @param Request $request
      * @param CommandService $commandService
      * @return JsonResponse
+     * @throws \Exception
      */
     public function putCommandAction(Request $request, CommandService $commandService) {
         $command = $request->get('command', '');
