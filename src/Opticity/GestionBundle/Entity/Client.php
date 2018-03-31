@@ -3,6 +3,8 @@
 namespace Opticity\GestionBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * Client
@@ -20,6 +22,12 @@ class Client
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @OneToOne(targetEntity="Opticity\GestionBundle\Entity\User")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * @ORM\Column(name="code", type="string", length=9, nullable=false, unique=true)
@@ -203,5 +211,29 @@ class Client
     public function getCode()
     {
         return $this->code;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Opticity\GestionBundle\Entity\User $user
+     *
+     * @return Client
+     */
+    public function setUser(\Opticity\GestionBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Opticity\GestionBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

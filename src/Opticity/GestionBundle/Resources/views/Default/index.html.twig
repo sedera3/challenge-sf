@@ -1,1 +1,17 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>challenge-sf</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/opticitygestion/css/common.css') }}"/>
+</head>
+<body>
+
+<section ng-app="opticityApp" ng-controller="opticityCtrl">
+    {% include('@OpticityGestion/Default/fiche_inscription.html.twig') %}
+</section>
+
+{% include('@OpticityGestion/Default/global.html.twig') %}
+</body>
+</html>

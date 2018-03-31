@@ -8,21 +8,26 @@
 namespace Opticity\GestionBundle\service;
 
 use Opticity\GestionBundle\Entity\Client;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
-class UserService extends BaseService
+class ClientService extends BaseService
 {
-    public function getUser($id) {
+    public function getClient($id) {
         $repo = $this->em->getRepository('OpticityGestionBundle:Client');
         return $repo->findClient($id);
     }
 
-    public function putUser($params) {
+    /**
+     * @param $params
+     * @throws \Doctrine\ORM\OptimisticLockException
+     */
+    public function putClient($params) {
         $repo = $this->em->getRepository('Opticity\GestionBundle\Entity\Client');
 
         foreach ($params as $item) {
             if (!isset($item['code'])) {
-                throw new \Exception('code doit exister');
+                throw new NotFoundHttpException('code doit exister');
             }
 
             $client = $repo->findOneBy([
@@ -30,22 +35,22 @@ class UserService extends BaseService
             ]);
 
             if (empty($item['nom'])) {
-                throw new \Exception('Mandatory nom');
+                throw new NotFoundHttpException('Mandatory nom');
             }
             if (empty($item['prenom'])) {
-                throw new \Exception('Mandatory prenom');
+                throw new NotFoundHttpException('Mandatory prenom');
             }
             if (empty($item['adresse'])) {
-                throw new \Exception('Mandatory adresse');
+                throw new NotFoundHttpException('Mandatory adresse');
             }
             if (empty($item['telephone'])) {
-                throw new \Exception('Mandatory telephone');
+                throw new NotFoundHttpException('Mandatory telephone');
             }
             if (empty($item['email'])) {
-                throw new \Exception('Mandatory email');
+                throw new NotFoundHttpException('Mandatory email');
             }
             if(filter_var($item['email'], FILTER_VALIDATE_EMAIL) == false) {
-                throw new \Exception('Mail format invalid');
+                throw new NotFoundHttpException('Mail format invalid');
             }
 
             if( empty($client) ) {

@@ -4,6 +4,7 @@ namespace Opticity\GestionBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * Command
@@ -28,8 +29,8 @@ class Command
     private $code;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Opticity\GestionBundle\Entity\Client")
-     * @ORM\JoinTable(name="bind_client_command")
+     * @OneToOne(targetEntity="Opticity\GestionBundle\Entity\Client")
+     * @JoinColumn(name="client", referencedColumnName="id")
      */
     private $client;
 
