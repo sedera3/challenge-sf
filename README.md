@@ -27,14 +27,11 @@ Développer :
 - Après validation de la commande par le client, la commande est enregistrée et visible sous forme de tableau dans une rubrique Gestion des commandes. Un message "Votre commande est enregistrée" s'affiche après validation si l'enregistrement s'est fait avec succès. Un message d'erreur "Votre commande n'a pas pu être enregistrée." s'affiche si la commande n'est pas enregistrée.
 - La rubrique gestion de commande affiche un tableau de toutes les commandes. Il affiche le numéro de la commande, la date de la commande, le nom et prénom du client, son adresse mail, le montant total de la commande. Un lien sur le Numéro de la commande permet de voir le détail de la commande sous forme de tableau. Une ligne par produit avec comme information affichée Nom du produit, Quantité achétée, Prix unitaire, Prix total
  
- Partie 3 : (bonus optionnel)
+ Partie 3 :
  *********
  - Création d'un api permettant de mettre à jour ou de créer des nouveaux produits depuis une plateforme externe
  - Création d'un api permettant d'effectuer une commande depuis une plateforme externe à l'application
  - Développer les tests unitaire permettant de valider les fonctionnalités.
- 
- NB : L'application doit être fonctionnelle et testable via la commande mentionnée en haut, mais il n'est pas obligatoire de faire une interface
- graphique spécifique.
 
 
     
