@@ -1,4 +1,4 @@
-Bocasay Challenge Symfony
+Challenge Symfony
 ========================
 
 La version du symfony utilisé 3.4.6
